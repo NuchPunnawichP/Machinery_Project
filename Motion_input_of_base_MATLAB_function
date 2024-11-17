@@ -1,0 +1,55 @@
+function azimuth_angle  = calculate_azimuth(lat, day, time)
+    % lat: Latitude of the observer (in degrees)
+    % declination: Solar declination (in degrees)
+    % time: Time of the day (in hours)
+    % Solar declination calculation (in degrees)
+
+    declination = 23.44 * sind(360 / 365 * (day - 81));
+
+    % Convert inputs to radians
+    lat_rad = deg2rad(lat);
+    decl_rad = deg2rad(declination);
+
+    % Calculate Hour Angle (H) in degrees
+    H = 15 * (time - 12);  % 15 degrees per hour (solar noon is at 12:00)
+    H_rad = deg2rad(H);
+
+    % Calculate Solar Altitude (Elevation) Angle
+    altitude = asin(sin(lat_rad) * sin(decl_rad) + cos(lat_rad) * cos(decl_rad) * cos(H_rad));
+    altitude_angle = rad2deg(altitude); % Convert from radians to degrees
+
+    % Calculate Solar Azimuth Angle
+    azimuth = atan2(-cos(decl_rad) * sin(H_rad), ...
+        cos(lat_rad) * sin(decl_rad) - sin(lat_rad) * cos(decl_rad) * cos(H_rad));
+    azimuth_angle = mod(rad2deg(azimuth), 360); % Convert to [0, 360]
+
+    % Constrain Azimuth to 180 Degrees and Reverse
+    if time >= 12
+        azimuth_angle = mod(azimuth_angle + 180,360); % Reverse direction beyond 180
+    end
+
+    % Azimuth at 6 PM (end of day)
+    azimuth_6pm = azimuth_angle;
+
+    % Calculate azimuth for 6 AM the next day
+    % (Use declination for the next day and hour angle for 6 AM)
+    declination_next_day = 23.44 * sind(360 / 365 * (day + 1 - 81)); % Declination for next day
+    decl_next_rad = deg2rad(declination_next_day);
+    H_6am = -90; % Hour angle for 6 AM in degrees
+    H_6am_rad = deg2rad(H_6am);
+
+    azimuth_next_6am = atan2(-cos(decl_next_rad) * sin(H_6am_rad), ...
+        cos(lat_rad) * sin(decl_next_rad) - sin(lat_rad) * cos(decl_next_rad) * cos(H_6am_rad));
+    azimuth_next_6am = mod(rad2deg(azimuth_next_6am), 360);
+
+    % Time since 6 PM in hours
+    hours_since_6pm = time - 18;
+
+    % Handle smooth transition after 6 PM
+    if time >= 18
+        % Linearly interpolate between azimuth_6pm and azimuth_next_6am over 12 hours
+        azimuth_angle = azimuth_6pm + (azimuth_next_6am - azimuth_6pm) * (hours_since_6pm / 12);
+    end
+
+    azimuth_angle = mod(360 - azimuth_angle,360);
+end
