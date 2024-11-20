@@ -48,6 +48,11 @@ This repository contains files for the Solar Machine Project 2024 and associated
 
 ---
 
+## **Usage Instructions**
+1. Clone this repository:
+   ```bash
+   git clone <https://github.com/NuchPunnawichP/Machinery_Project.git>
+
 ### **8. Synthesized_4Bars_Linkage.png**
 - **Location**: Root directory
 - **Description**: An image of the synthesized four-bar linkage design for the tracker.
