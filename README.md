@@ -1,36 +1,55 @@
-How to Use This Repository
-Structure Overview
-This repository contains files related to the "Solar Machine Project 2024" and a crank-rocker mechanism for solar tracking. Below is the explanation of key files and folders:
+# **Solar Machine Project 2024**
 
-CAD(.step)
+This repository contains files for the Solar Machine Project 2024 and associated simulations, CAD designs, and MATLAB scripts for solar tracking mechanisms. Below is the file structure and usage guide.
 
-Location: Folder CAD(.step)
-Description: Contains CAD files in .step format for the solar tracking mechanism.
-Crank_Rocker_Mechanism.mp4
+---
 
-Location: Root directory
-Description: Animation video showcasing the crank-rocker mechanism with its extreme positions.
-Solar_Machine_Project_2024_FINAL.slx
+## **Repository Structure**
 
-Location: Root directory
-Description: Simulink file for the complete solar tracking system.
-Motion_input_of_base_MATLAB_function
+### **1. CAD(.step)**
+- **Location**: `CAD(.step)/`
+- **Description**: Contains `.step` files for the CAD model of the solar tracking mechanism.
 
-Location: Root directory
-Description: MATLAB script for defining motion input of the base system.
-Solar_Range.png
+---
 
-Location: Root directory
-Description: Image showing the range of motion for solar tracking.
-Solar_Trajectory.mlx
+### **2. Crank_Rocker_Mechanism.mp4**
+- **Location**: Root directory
+- **Description**: Animation showing the crank-rocker mechanism with its extreme positions.
 
-Location: Root directory
-Description: MATLAB live script that proves the solar panel's trajectory.
-Synthesis_solar_panel.mlx
+---
 
-Location: Root directory
-Description: MATLAB live script for synthesizing solar panel mechanism.
-Synthesized_4Bars_Linkage.png
+### **3. Solar_Machine_Project_2024_FINAL.slx**
+- **Location**: Root directory
+- **Description**: A Simulink model for simulating the complete solar tracking system.
 
-Location: Root directory
-Description: Image of the synthesized four-bar linkage design.
+---
+
+### **4. Motion_input_of_base_MATLAB_function**
+- **Location**: Root directory
+- **Description**: MATLAB script to define the motion input of the mechanism's base.
+
+---
+
+### **5. Solar_Range.png**
+- **Location**: Root directory
+- **Description**: A diagram representing the range of motion for the solar tracker.
+
+---
+
+### **6. Solar_Trajectory.mlx**
+- **Location**: Root directory
+- **Description**: MATLAB live script demonstrating the solar panel's motion trajectory.
+
+---
+
+### **7. Synthesis_solar_panel.mlx**
+- **Location**: Root directory
+- **Description**: MATLAB live script for synthesizing the solar tracking mechanism.
+
+---
+
+### **8. Synthesized_4Bars_Linkage.png**
+- **Location**: Root directory
+- **Description**: An image of the synthesized four-bar linkage design for the tracker.
+
+---
