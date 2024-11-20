@@ -76,14 +76,6 @@ This repository contains files for the Solar Machine Project 2024 and associated
    - **Description**:  
      This video is another view of the **21June.mp4** simulation, shown in an **isometric perspective** for a better 3D visualization of the mechanism's movement.
 
----
-
-### **Usage**
-- Open any `.mp4` file using a video player to observe the operation of the mechanism for different solar positions throughout the year.
-- Use **ISO.mp4** for a 3D perspective to better visualize the system's motion on June 21st.
-
----
-
 These videos are helpful for analyzing the performance of the solar tracking mechanism on key days of the year and its adaptability to seasonal changes.
 
 ---
