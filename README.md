@@ -58,7 +58,6 @@ This repository contains files for the Solar Machine Project 2024 and associated
 - **Location**: `Mechanism_Operating/`
 - **Description**:
 - This folder contains simulation videos showcasing the operation of the solar tracking mechanism on significant days of the year. Below are the details for each video:
-- **Videos Description**
 
 1. **21Dec.mp4**  
    - **Description**:  
